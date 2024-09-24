@@ -118,6 +118,8 @@ jobs:
   clean:
     name: clean-images
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
     needs: build
     steps:
       - name: clean-images
