@@ -6,6 +6,9 @@ jobs:
   build:
     name: build-image
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     strategy:
       fail-fast: true
       matrix:
