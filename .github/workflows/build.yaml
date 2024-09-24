@@ -12,9 +12,76 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        ubuntu-version: [22.04]
-        cuda-version: [12.1]
-        cuda-keyring-version: [1.1]
+        include:
+          - cuda-version: 8.0
+            ubuntu-version: 16.04
+            cuda-keyring-version: 1.0
+          - cuda-version: 9.0
+            ubuntu-version: 16.04
+            cuda-keyring-version: 1.0
+          - cuda-version: 9.1
+            ubuntu-version: 16.04
+            cuda-keyring-version: 1.0
+          - cuda-version: 9.2
+            ubuntu-version: 16.04
+            cuda-keyring-version: 1.1
+          - cuda-version: 10.0
+            ubuntu-version: 18.04
+            cuda-keyring-version: 1.1
+          - cuda-version: 10.1
+            ubuntu-version: 18.04
+            cuda-keyring-version: 1.1
+          - cuda-version: 10.2
+            ubuntu-version: 18.04
+            cuda-keyring-version: 1.1
+          - cuda-version: 11.0
+            ubuntu-version: 20.04
+            cuda-keyring-version: 1.1
+          - cuda-version: 11.1
+            ubuntu-version: 20.04
+            cuda-keyring-version: 1.1
+          - cuda-version: 11.2
+            ubuntu-version: 20.04
+            cuda-keyring-version: 1.1
+          - cuda-version: 11.3
+            ubuntu-version: 20.04
+            cuda-keyring-version: 1.1
+          - cuda-version: 11.4
+            ubuntu-version: 20.04
+            cuda-keyring-version: 1.1
+          - cuda-version: 11.5
+            ubuntu-version: 20.04
+            cuda-keyring-version: 1.1
+          - cuda-version: 11.6
+            ubuntu-version: 20.04
+            cuda-keyring-version: 1.1
+          - cuda-version: 11.7
+            ubuntu-version: 22.04
+            cuda-keyring-version: 1.1
+          - cuda-version: 11.8
+            ubuntu-version: 22.04
+            cuda-keyring-version: 1.1
+          - cuda-version: 12.0
+            ubuntu-version: 22.04
+            cuda-keyring-version: 1.1
+          - cuda-version: 12.1
+            ubuntu-version: 22.04
+            cuda-keyring-version: 1.1
+          - cuda-version: 12.2
+            ubuntu-version: 22.04
+            cuda-keyring-version: 1.1
+          - cuda-version: 12.3
+            ubuntu-version: 22.04
+            cuda-keyring-version: 1.1
+          - cuda-version: 12.4
+            ubuntu-version: 22.04
+            cuda-keyring-version: 1.1
+          - cuda-version: 12.5
+            ubuntu-version: 24.04
+            cuda-keyring-version: 1.1
+          - cuda-version: 12.6
+            ubuntu-version: 24.04
+            cuda-keyring-version: 1.1
     steps:
       - name: sync-code
         uses: actions/checkout@v4
