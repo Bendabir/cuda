@@ -30,7 +30,7 @@ jobs:
           file: images/linux.Dockerfile
           platforms: linux/amd64
           pull: true
-          push: false # FIXME
+          push: true
           tags: ghcr.io/bendabir/cuda:${{ matrix.cuda-version }}
           labels: |
             maintainer="bendabir"
