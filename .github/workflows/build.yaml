@@ -13,12 +13,15 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - cuda-version: "8.0"
-            ubuntu-version: "16.04"
-            cuda-keyring-version: "1.0"
-          - cuda-version: "9.0"
-            ubuntu-version: "16.04"
-            cuda-keyring-version: "1.0"
+          # NOTE : cuda-compiler-x-y doesn't exist for 8.0 and 9.0,
+          #        so not supporting.
+          #        They are very old anyway.
+          # - cuda-version: "8.0"
+          #   ubuntu-version: "16.04"
+          #   cuda-keyring-version: "1.0"
+          # - cuda-version: "9.0"
+          #   ubuntu-version: "16.04"
+          #   cuda-keyring-version: "1.0"
           - cuda-version: "9.1"
             ubuntu-version: "16.04"
             cuda-keyring-version: "1.0"
