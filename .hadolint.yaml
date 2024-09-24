@@ -1,0 +1,8 @@
+failure-threshold: warning
+trustedRegistries:
+  - docker.io
+  - ghcr.io/bendabir
+strict-labels: true
+label-schema:
+  maintainer: text
+  org.opencontainers.image.source: url
