@@ -1,11 +1,12 @@
 # CUDA Docker Images
 
-Collection of CUDA images for builds (like PyTorch). Hosted to `ghcr.io/bendabir/cuda`. Images are based on Ubuntu. Most recent Ubuntu base image is used when possible.
+Collection of CUDA images for builds (like PyTorch). Hosted to `ghcr.io/bendabir/cuda`. Only Linux x64 is supported. Images are based on Ubuntu. Most recent Ubuntu base image is used when possible.
 
 ## Compatibility
 
 | CUDA Version | Ubuntu Version | Status |
 | ------------ | -------------- | ------ |
+| 8.0          | 16.04          | EoL    |
 | 9.0          | 16.04          | EoL    |
 | 9.1          | 16.04          | EoL    |
 | 9.2          | 16.04          | EoL    |
