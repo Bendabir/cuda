@@ -45,3 +45,17 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           provenance: false
+  clean:
+    name: clean-images
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: clean-images
+        uses: actions/delete-package-versions@v5
+        with:
+          owner: bendabir
+          package-name: cuda
+          package-type: container
+          token: ${{ secrets.GITHUB_TOKEN }}
+          delete-only-untagged-versions: true
+          min-versions-to-keep: 0 # all
