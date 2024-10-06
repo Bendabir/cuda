@@ -4,8 +4,8 @@ ARG UBUNTU_VERSION=16.04
 ARG CUDA_VERSION=8.0
 ARG CUDA_KEYRING_VERSION=1.0
 
-# Force the base base image to avoid issues with GLIBC
-FROM ubuntu:24.04
+# Force the base base image to avoid issues with GLIBC and gcc
+FROM ubuntu:22.04
 
 ARG UBUNTU_VERSION
 ARG CUDA_VERSION
