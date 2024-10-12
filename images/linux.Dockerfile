@@ -3,6 +3,7 @@
 ARG UBUNTU_VERSION=16.04
 ARG CUDA_VERSION=8.0
 ARG CUDA_KEYRING_VERSION=1.0
+ARG GCC_VERSION=5
 
 # Force the base base image to avoid issues with GLIBC and gcc
 FROM ubuntu:22.04
@@ -10,6 +11,7 @@ FROM ubuntu:22.04
 ARG UBUNTU_VERSION
 ARG CUDA_VERSION
 ARG CUDA_KEYRING_VERSION
+ARG GCC_VERSION
 
 LABEL maintainer="bendabir"
 LABEL org.opencontainers.image.source="https://github.com/bendabir/cuda"
