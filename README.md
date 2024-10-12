@@ -39,6 +39,7 @@ The Ubuntu version is only used to target the appropriate repository to download
 export CUDA_VERSION="12.1"
 export UBUNTU_VERSION="22.04"
 export CUDA_KEYRING_VERSION="1.1"
+export GCC_VERSION="11"
 
 docker build \
   -t "ghcr.io/bendabir/cuda:$CUDA_VERSION" \
@@ -47,5 +48,6 @@ docker build \
   --build-arg "CUDA_VERSION=$CUDA_VERSION" \
   --build-arg "UBUNTU_VERSION=$UBUNTU_VERSION" \
   --build-arg "CUDA_KEYRING_VERSION=$CUDA_KEYRING_VERSION" \
+  --build-arg "GCC_VERSION=$GCC_VERSION" \
   .
 ```
