@@ -34,4 +34,22 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+# Install compatible gcc/g++ version with CUDA version
+# Cannot purge the already installed version because CUDA depends on it
+# So images using a non-default version of gcc will be bigger (+200 MB)...
+# Installed after so links are not overwritten
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends gcc-${GCC_VERSION} g++-${GCC_VERSION} \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* \
+    && update-alternatives \
+    --install /usr/bin/gcc gcc /usr/bin/gcc-${GCC_VERSION} ${GCC_VERSION} \
+    --slave /usr/bin/g++ g++ /usr/bin/g++-${GCC_VERSION} \
+    --slave /usr/bin/gcc-ar gcc-ar /usr/bin/gcc-ar-${GCC_VERSION} \
+    --slave /usr/bin/gcc-nm gcc-nm /usr/bin/gcc-nm-${GCC_VERSION} \
+    --slave /usr/bin/gcc-ranlib gcc-ranlib /usr/bin/gcc-ranlib-${GCC_VERSION} \
+    --slave /usr/bin/gcov gcov /usr/bin/gcov-${GCC_VERSION} \
+    --slave /usr/bin/gcov-dump gcov-dump /usr/bin/gcov-dump-${GCC_VERSION} \
+    --slave /usr/bin/gcov-tool gcov-tool /usr/bin/gcov-tool-${GCC_VERSION}
+
 ENV CUDA_HOME="/usr/local/cuda-${CUDA_VERSION}"
